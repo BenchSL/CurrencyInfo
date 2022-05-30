@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DtecBS>
+ <tecajnica datum="2007-01-01">
+  <tecaj oznaka="USD" sifra="840">1.3170</tecaj>
+  <tecaj oznaka="JPY" sifra="392">156.93</tecaj>
+  <tecaj oznaka="ZAR" sifra="710">16.7814</tecaj>
+ </tecajnica>
+ <tecajnica datum="2007-01-02">
+  <tecaj oznaka="USD" sifra="845">2.3170</tecaj>
+  <tecaj oznaka="JPY" sifra="396">152.93</tecaj>
+  <tecaj oznaka="ZAR" sifra="713">17.7814</tecaj>
+ </tecajnica>
+ <tecajnica datum="2007-01-03">
+  <tecaj oznaka="USD" sifra="841">3.3170</tecaj>
+  <tecaj oznaka="JPY" sifra="356">142.93</tecaj>
+  <tecaj oznaka="ZAR" sifra="730">12.7814</tecaj>
+ </tecajnica>
+</DtecBS>

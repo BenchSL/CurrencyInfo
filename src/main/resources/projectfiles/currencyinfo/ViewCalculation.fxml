@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.chart.AreaChart?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="527.0" prefWidth="780.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="projectfiles.currencyinfo.CalculationController">
+   <children>
+      <Label layoutX="271.0" layoutY="30.0" text="Izračun">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <ChoiceBox fx:id="PickCurr1" layoutX="78.0" layoutY="134.0" prefWidth="150.0" />
+      <ChoiceBox fx:id="PickCurr2" layoutX="78.0" layoutY="192.0" prefWidth="150.0" />
+      <Label layoutX="21.0" layoutY="138.0" text="Valuta 1: ">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="21.0" layoutY="196.0" text="Valuta 2:">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <ChoiceBox fx:id="PickYear" layoutX="78.0" layoutY="281.0" prefWidth="150.0" />
+      <Label layoutX="21.0" layoutY="286.0" text="Leto:">
+         <font>
+            <Font name="Times New Roman" size="14.0" />
+         </font>
+      </Label>
+      <Button layoutX="63.0" layoutY="456.0" mnemonicParsing="false" onAction="#CalcButtonClicked" prefHeight="34.0" prefWidth="166.0" text="Izračun zaslužkov/izgub">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Button>
+      <AreaChart fx:id="areaChart" layoutX="229.0" layoutY="73.0" prefHeight="446.0" prefWidth="542.0">
+        <xAxis>
+          <CategoryAxis side="BOTTOM" />
+        </xAxis>
+        <yAxis>
+          <NumberAxis side="LEFT" />
+        </yAxis>
+      </AreaChart>
+   </children>
+</AnchorPane>
