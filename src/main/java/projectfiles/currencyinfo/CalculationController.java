@@ -15,6 +15,7 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.lang.reflect.Method;
 import java.math.BigDecimal;
 import java.math.RoundingMode;
 import java.net.URL;
@@ -33,22 +34,13 @@ public class CalculationController implements Initializable
     ChoiceBox PickCurr1;
     @FXML
     ChoiceBox PickCurr2;
-
+    private MethodBase mb = new MethodBase();
     private ArrayList<CurrencyModel> currencies = new ArrayList<CurrencyModel>();
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle)
     {
-        File xmlFile = new File("dtecbs-l.xml");
-        CurrencyXmlParser parser = new CurrencyXmlParser();
-        try
-        {
-            currencies = parser.parseXml(new FileInputStream(xmlFile));
-        }
-        catch (FileNotFoundException e)
-        {
-            throw new RuntimeException(e);
-        }
+        currencies = mb.FillCurr();
         PopulateChoice();
     }
     public void CalcButtonClicked(ActionEvent event) throws IOException

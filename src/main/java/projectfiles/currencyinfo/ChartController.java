@@ -29,22 +29,13 @@ public class ChartController implements Initializable
     @FXML
     ChoiceBox pickCurr2;
 
+    MethodBase mb = new MethodBase();
     private ArrayList<CurrencyModel> currencies = new ArrayList();
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle)
     {
-        File xmlFile = new File("dtecbs-l.xml");
-        CurrencyXmlParser parser = new CurrencyXmlParser();
-        try
-        {
-            currencies = parser.parseXml(new FileInputStream(xmlFile));
-
-        }
-        catch (FileNotFoundException e)
-        {
-            throw new RuntimeException(e);
-        }
+        currencies = mb.FillCurr();
 
         XYChart.Series seriesUSD = new XYChart.Series();
         seriesUSD.setName("USD");

@@ -8,9 +8,6 @@ import javafx.scene.control.DatePicker;
 import javafx.scene.control.ListView;
 import projectfiles.currencyinfo.Models.CurrencyModel;
 
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.net.URL;
 import java.text.ParseException;
@@ -28,24 +25,14 @@ public class CurrencyController implements Initializable
     private DatePicker DateFrom;
     @FXML
     private DatePicker DateTo;
-
+    MethodBase mb = new MethodBase();
     private ArrayList<CurrencyModel> currencies = new ArrayList<CurrencyModel>();
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle)
     {
-        File xmlFile = new File("dtecbs-l.xml");
-        CurrencyXmlParser parser = new CurrencyXmlParser();
-        try
-        {
-            currencies = parser.parseXml(new FileInputStream(xmlFile));
-            CurrencyList.getItems().addAll(currencies);
-
-        }
-        catch (FileNotFoundException e)
-        {
-            throw new RuntimeException(e);
-        }
+        currencies = mb.FillCurr();
+        CurrencyList.getItems().addAll(currencies);
     }
 
     public void LoadFromTo(ActionEvent event) throws IOException, ParseException //yyyy.mm.dd
